@@ -2,6 +2,8 @@ from flask import jsonify, request
 from app import db, create_app
 from app.models import Item
 
+app = create_app()
+
 @app.route('/items', methods=['GET'])
 def get_items():
     items = Item.query.all()
